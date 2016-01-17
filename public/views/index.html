@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='userApp'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body ng-controller="mainController">
+    <div class="col-md-3">
+      <tr>
+        <table class="table table-stripped">
+          <tbody>
+            <tr>
+                <th>Id</th>
+                <th>repo_id</th>
+                <th>repo_name</th>
+                <th>repo_url</th>
+            </tr>
+          <tr ng-repeat="info in github.data">
+            <td class="success panel panel default">{{info.id}}</td>
+            <td class="panel panel default">{{info.repo.id}}</td>
+            <td class="panel panel default">{{info.repo.name}}</td>
+            <td class="panel panel default">{{info.repo.url}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </tr>
+    </div>
+  </body>
+</html>
